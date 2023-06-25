@@ -17,4 +17,13 @@
       android:text="Keluar"
       android:textSize="20sp" />
 
+  <Button
+      android:id="@+id/btnAddProduct"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Tambah Produk"
+      android:layout_below="@id/btnKeluar"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="20dp"/>
+
   </RelativeLayout>

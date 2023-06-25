@@ -34,6 +34,11 @@ class Akun : AppCompatActivity() {
             }
         }
 
+        binding.btnAddProduct.setOnClickListener {
+            val intent = Intent(this, AddProductActivity::class.java)
+            startActivity(intent)
+        }
+
         firebaseAuth = FirebaseAuth.getInstance()
 
         binding.btnKeluar.setOnClickListener {

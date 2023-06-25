@@ -3,11 +3,12 @@ package com.geminiboy.pasaronline
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.geminiboy.pasaronline.databinding.ActivityHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
 
 class Home : AppCompatActivity() {
 
@@ -23,6 +24,7 @@ class Home : AppCompatActivity() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            Log.d("BottomNav", "Item selected: ${item.title}")
             when (item.itemId) {
                 R.id.actHome -> {
                     // Tidak perlu melakukan apa-apa karena Anda sudah berada di halaman Home
@@ -37,6 +39,13 @@ class Home : AppCompatActivity() {
             }
         }
 
+        binding.keAkun.setOnClickListener {
+            val intent = Intent(this, Akun::class.java)
+            startActivity(intent)
+        }
+
+        // Inisialisasi RecyclerView
+        binding.productRecyclerView.layoutManager = LinearLayoutManager(this)
 
         firebaseAuth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
@@ -53,7 +62,6 @@ class Home : AppCompatActivity() {
                     }
                 }
                 .addOnFailureListener { e ->
-                    // Menampilkan pesan error jika gagal mengambil data username
                     e.printStackTrace()
                 }
         }
