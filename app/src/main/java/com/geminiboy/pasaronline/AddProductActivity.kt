@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.geminiboy.pasaronline.databinding.ActivityAddProductBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
@@ -15,6 +16,7 @@ class AddProductActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddProductBinding
     private lateinit var storageReference: StorageReference
     private lateinit var firestore: FirebaseFirestore
+    private lateinit var firebaseAuth: FirebaseAuth
     private var selectedImageUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +26,7 @@ class AddProductActivity : AppCompatActivity() {
 
         storageReference = FirebaseStorage.getInstance().reference
         firestore = FirebaseFirestore.getInstance()
+        firebaseAuth = FirebaseAuth.getInstance()
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
@@ -36,6 +39,11 @@ class AddProductActivity : AppCompatActivity() {
                 }
                 R.id.actAkun -> {
                     val intent = Intent(this, Akun::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.actPesanan -> {
+                    val intent = Intent(this, PesananActivity::class.java)
                     startActivity(intent)
                     true
                 }
@@ -84,12 +92,14 @@ class AddProductActivity : AppCompatActivity() {
         val productName = binding.etProductName.text.toString()
         val productDescription = binding.etProductDescription.text.toString()
         val productPrice = binding.etProductPrice.text.toString().toDouble()
+        val sellerName = binding.etSellerName.text.toString()
 
         // Membuat objek data produk
         val productData = hashMapOf(
             "name" to productName,
             "description" to productDescription,
             "price" to productPrice,
+            "sellerName" to sellerName,
             "image" to imageUrl
         )
 

@@ -24,7 +24,6 @@ class Home : AppCompatActivity() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
-            Log.d("BottomNav", "Item selected: ${item.title}")
             when (item.itemId) {
                 R.id.actHome -> {
                     // Tidak perlu melakukan apa-apa karena Anda sudah berada di halaman Home
@@ -35,14 +34,21 @@ class Home : AppCompatActivity() {
                     startActivity(intent)
                     true
                 }
+                R.id.actPesanan -> {
+                    val intent = Intent(this, PesananActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
                 else -> false
             }
         }
+
 
         binding.keAkun.setOnClickListener {
             val intent = Intent(this, Akun::class.java)
             startActivity(intent)
         }
+
 
         // Inisialisasi RecyclerView
         binding.productRecyclerView.layoutManager = LinearLayoutManager(this)

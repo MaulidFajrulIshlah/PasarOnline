@@ -9,4 +9,10 @@
         android:id="@+id/actAkun"
         android:title="Akun"
         android:icon="@drawable/ic_akun"/>
+
+    <item
+        android:id="@+id/actPesanan"
+        android:title="Pesanan"
+        android:icon="@drawable/ic_list"/>
+
 </menu>

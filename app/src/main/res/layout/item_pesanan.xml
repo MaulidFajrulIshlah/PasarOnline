@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/tvPembeli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pembeli:"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewPembeliValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvPenjual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Penjual:"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewPenjualValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvProduk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Produk:"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewProdukValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvTimestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Timestamp:"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewTimestampValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000" />
+
+    <Button
+        android:id="@+id/btnHapus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hapus" />
+
+</LinearLayout>

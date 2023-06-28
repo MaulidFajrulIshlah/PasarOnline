@@ -30,6 +30,11 @@ class Akun : AppCompatActivity() {
                     // Tidak perlu melakukan apa-apa karena sudah berada di halaman Akun
                     true
                 }
+                R.id.actPesanan -> {
+                    val intent = Intent(this, PesananActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
                 else -> false
             }
         }

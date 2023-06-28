@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvPembeli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pembeli" />
+
+    <TextView
+        android:id="@+id/tvPenjual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Penjual" />
+
+    <TextView
+        android:id="@+id/tvProduk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Produk" />
+
+    <TextView
+        android:id="@+id/tvTimestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Timestamp" />
+
+</LinearLayout>
